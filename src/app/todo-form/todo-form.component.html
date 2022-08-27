@@ -1,0 +1,37 @@
+<div class="container">
+    <form [formGroup]="todoForm" (ngSubmit)="OnSubmit()">
+        <div>
+            <label>
+                Title
+            </label>
+            <input type="text" formControlName="title">
+        </div>
+        <div>
+            <label>
+                Assigned Date
+            </label>
+            <input type="date" formControlName="assign_date">
+        </div>
+        <div>
+            <label>
+                Due Date
+            </label>
+            <input type="date" formControlName="due_date">
+        </div>
+        <div>
+            <label>
+                Status
+            </label>
+            <select formControlName="status" class="form-control">
+                <option disabled>Select status</option>
+                <option>Select</option>
+                <option *ngFor="let p of statusData">{{p}}</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primery">Submit</button>
+
+        <button type="button" class="btn btn-primery" (click)="onReset()">Reset</button>
+
+    </form>
+</div>
